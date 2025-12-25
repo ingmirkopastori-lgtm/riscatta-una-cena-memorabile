@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Ristorante Villa Crespi – Riscatta il codice</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #0e0e0e;
+    color: #fff;
+}
+
+header {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+                url("sfondo.jpg") center/cover no-repeat;
+    padding: 120px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em;
+    color: gold;
+}
+
+header p {
+    font-size: 1.3em;
+    opacity: 0.9;
+}
+
+section {
+    padding: 50px 20px;
+}
+
+.box {
+    background: #1b1b1b;
+    max-width: 900px;
+    margin: auto;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(255,215,0,0.2);
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1em;
+}
+
+button {
+    background: gold;
+    color: #000;
+    border: none;
+    padding: 14px 35px;
+    font-size: 1em;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ffd700;
+}
+
+.quiz {
+    display: none;
+    margin-top: 40px;
+}
+
+.question {
+    margin-bottom: 35px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+}
+
+.question h3 {
+    font-family: 'Playfair Display', serif;
+    color: gold;
+}
+
+label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+.result {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.result h2 {
+    font-family: 'Playfair Display', serif;
+    color: gold;
+}
+
+.result img {
+    max-width: 80%;
+    border-radius: 20px;
+    margin-top: 20px;
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Ristorante Villa Crespi</h1>
+    <p>Master Quiz di Alta Cucina</p>
+</header>
+
+<section>
+<div class="box">
+
+    <h2>Inserisci il codice segreto</h2>
+    <input type="text" id="codice" placeholder="Es. AURORA1">
+    <br>
+    <button onclick="riscatta()">Accedi al Quiz</button>
+
+    <div class="quiz" id="quiz">
+
+        <!-- DOMANDE -->
+        <div class="question">
+            <h3>1. Cos’è una riduzione?</h3>
+            <label><input type="radio" name="q1" value="0"> Salsa fredda</label>
+            <label><input type="radio" name="q1" value="0"> Tipo di pasta</label>
+            <label><input type="radio" name="q1" value="1"> Liquido concentrato per evaporazione</label>
+            <label><input type="radio" name="q1" value="0"> Spezia</label>
+            <label><input type="radio" name="q1" value="0"> Tecnica di frittura</label>
+        </div>
+
+        <div class="question">
+            <h3>2. La cottura sous-vide avviene:</h3>
+            <label><input type="radio" name="q2" value="0"> Al microonde</label>           
+            <label><input type="radio" name="q2" value="1"> Sottovuoto a bassa temperatura</label>
+            <label><input type="radio" name="q2" value="0"> In forno statico</label>
+            <label><input type="radio" name="q2" value="0"> Alla griglia</label>
+            <label><input type="radio" name="q2" value="0"> In padella</label>
+
+        </div>
+
+        <div class="question">
+            <h3>3. Quale funzione ha l’albume nella chiarificazione di un brodo (consommé)?</h3>
+            <label><input type="radio" name="q3" value="0"> Schiarire il colore tramite ossidazione</label>
+            <label><input type="radio" name="q3" value="0"> Aumentare la viscosità</label>
+            <label><input type="radio" name="q3" value="0"> Emulsionare i grassi</label>
+            <label><input type="radio" name="q3" value="0"> Insaporire</label>
+            <label><input type="radio" name="q3" value="1"> Coagulare e intrappolare le impurità</label>
+        </div>
+
+        <div class="question">
+            <h3>4. La reazione di Maillard è:</h3>
+            <label><input type="radio" name="q4" value="0"> Metodo di marinatura</label>
+            <label><input type="radio" name="q4" value="0"> Tecnica di affumicatura</label>
+            <label><input type="radio" name="q4" value="0"> Tipo di spezia</label>
+            <label><input type="radio" name="q4" value="0"> La sigillatura degli arrosti</label>
+            <label><input type="radio" name="q4" value="1"> Doratura tra zuccheri e proteine</label>
+        </div>
+
+        <div class="question">
+            <h3>5. Umami indica:</h3>
+            <label><input type="radio" name="q5" value="0"> Un profumo</label>
+            <label><input type="radio" name="q5" value="1"> Il quinto gusto</label>
+            <label><input type="radio" name="q5" value="0"> Una cottura</label>
+            <label><input type="radio" name="q5" value="0"> Un vino</label>
+            <label><input type="radio" name="q5" value="0"> Una salsa</label>
+        </div>
+
+        <div class="question">
+            <h3>6. Il termine “mantecatura” riguarda:</h3>
+            <label><input type="radio" name="q6" value="1"> La cremosità del risotto</label>
+            <label><input type="radio" name="q6" value="0"> La lievitazione</label>
+            <label><input type="radio" name="q6" value="0"> La frittura</label>
+            <label><input type="radio" name="q6" value="0"> L’affumicatura</label>
+            <label><input type="radio" name="q6" value="0"> Il taglio</label>
+        </div>
+
+        <div class="question">
+            <h3>7. Il tartufo è:</h3>
+            <label><input type="radio" name="q7" value="0"> Una spezia</label>
+            <label><input type="radio" name="q7" value="0"> Un tubero</label>
+            <label><input type="radio" name="q7" value="1"> Un fungo ipogeo</label>
+            <label><input type="radio" name="q7" value="0"> Un frutto</label>
+            <label><input type="radio" name="q7" value="0"> Un seme</label>
+        </div>
+
+        <div class="question">
+            <h3>8. La bisque è:</h3>
+            <label><input type="radio" name="q8" value="0"> Una salsa dolce</label>
+            <label><input type="radio" name="q8" value="0"> Un luogo losco dove si gioca a carte</label>
+            <label><input type="radio" name="q8" value="0"> Una marinatura</label>
+            <label><input type="radio" name="q8" value="1"> Una zuppa di crostacei</label>
+            <label><input type="radio" name="q8" value="0"> Un impasto</label>
+        </div>
+
+        <div class="question">
+            <h3>9. In quale intervallo di temperatura avviene in modo ottimale la reazione di Maillard?</h3>
+            <label><input type="radio" name="q9" value="1"> 120–160 °C</label>
+            <label><input type="radio" name="q9" value="0"> 180–220 °C</label>
+            <label><input type="radio" name="q9" value="0"> 90–110 °C</label>
+            <label><input type="radio" name="q9" value="0"> 60–80 °C</label>
+            <label><input type="radio" name="q9" value="0"> Oltre 250 °C</label>
+        </div>
+
+        <div class="question">
+            <h3>10. Quale combinazione di ingredienti è corretta e completa per la preparazione della crema pasticcera classica secondo la tecnica tradizionale?</h3>
+            <label><input type="radio" name="q10" value="0"> Latte, zucchero, albumi, burro, vaniglia</label>
+            <label><input type="radio" name="q10" value="0"> Latte, zucchero, tuorli d’uovo, farina, marsala</label>
+            <label><input type="radio" name="q10" value="1"> Latte, zucchero, tuorli d’uovo, amido (o farina), vaniglia</label>
+            <label><input type="radio" name="q10" value="0"> Panna, zucchero a velo, uova intere, gelatina</label>
+            <label><input type="radio" name="q10" value="0"> Latte, miele, tuorli, bicarbonato, scorza di limone</label>
+        </div>
+
+        <button onclick="calcola()">Invia Quiz</button>
+    </div>
+
+    <div class="result">
+        <h2 id="testoRisultato"></h2>
+        <img id="imgRisultato">
+    </div>
+
+</div>
+</section>
+
+<script>
+function riscatta() {
+    const codice = document.getElementById("codice").value.trim();
+    const validi = ["05052002", "GIOVANNI", "LUCA"];
+
+    if (validi.includes(codice)) {
+        document.getElementById("quiz").style.display = "block";
+    } else {
+        alert("Codice non valido");
+    }
+}
+
+function calcola() {
+    let punti = 0;
+    for (let i = 1; i <= 10; i++) {
+        const r = document.querySelector(`input[name="q${i}"]:checked`);
+        if (r) punti += parseInt(r.value);
+    }
+
+    const testo = document.getElementById("testoRisultato");
+    const img = document.getElementById("imgRisultato");
+
+    if (punti >= 7) {
+        testo.innerText = "Bravo, ti meriti di mangiare qui:";
+        img.src = "premio.jpg";
+    } else {
+        testo.innerText = "Al massimo ti meriti di mangiare qui:";
+        img.src = "sconfitta.jpg";
+    }
+
+    img.style.display = "block";
+    window.scrollTo(0, document.body.scrollHeight);
+}
+</script>
+
+</body>
+</html>
